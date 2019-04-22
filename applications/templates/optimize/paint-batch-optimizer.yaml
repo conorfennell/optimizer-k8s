@@ -1,0 +1,13 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: paint-batch-optimizer
+spec:
+  project: optimize
+  source:
+    repoURL: https://github.com/conorfennell/paint-batch-optimizer.git
+    path: chart
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: optimize
