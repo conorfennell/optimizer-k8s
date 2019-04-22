@@ -1,0 +1,14 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+spec:
+  project: argocd
+  source:
+    repoURL: https://github.com/conorfennell/optimizer-k8s.git
+    path: charts/argocd
+    targetRevision: e64f8c15918fb10b1506dd2d476a096b112286dd
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
