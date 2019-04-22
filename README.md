@@ -4,8 +4,9 @@ ArgoCD declarative pull based Gitops repository representing the state of the pa
 ## optimizer-k8s contains the following ArgoCD applications
 
  - paint-batch-optimizer
- - metrics-server - needed for the horizontal pol scaler
+ - metrics-server - needed for the horizontal pod scaler and when prometheus is added for scraping
  - argocd
+ - parent application - once bootstrapped this is used to add new applications and sync changes to other application definitions without needing to apply them in
 
 
 ### Prerequisites
