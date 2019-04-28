@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: check-argos
+  labels:
+    app: check-argos
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: check-argos
+  template:
+    metadata:
+      labels:
+        app: check-argos
+    spec:
+      containers:
+      - name: check-argos
+        image: sevenleap/apps:check-argos
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            memory: "200Mi"
+            cpu: 10m
+          limits:
+            memory: "200Mi"
+          httpGet:
+            path: /search?q=seven
+            port: 3000
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /search?q=seven
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      imagePullSecrets:
+      - name: regcred
