@@ -10,14 +10,14 @@ metadata:
       name: check-argos
       host: checkargos.com
       prefix: /
-      service: check-argos.default
+      service: "check-argos.{{ .Release.Namespace }}"
       ---
       apiVersion: ambassador/v1
       kind: Mapping
       name: check-argos-www
       host: www.checkargos.com
       prefix: /
-      service: check-argos.default
+      service: "check-argos.{{ .Release.Namespace }}"
 spec:
   selector:    
     app: check-argos

@@ -4,10 +4,10 @@ kind: Application
 metadata:
   name: check-argos
 spec:
-  project: default
+  project: check-argos
   source:
     repoURL: https://github.com/conorfennell/optimizer-k8s.git
     path: charts/check-argos
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: check-argos
