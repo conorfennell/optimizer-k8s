@@ -5,19 +5,19 @@ metadata:
   annotations:
     getambassador.io/config: |
       ---
-      apiVersion: ambassador/v0
+      apiVersion: ambassador/v1
       kind: Mapping
       name: check-argos
       host: checkargos.com
       prefix: /
-      service: check-argos
+      service: check-argos.default
       ---
-      apiVersion: ambassador/v0
+      apiVersion: ambassador/v1
       kind: Mapping
       name: check-argos-www
       host: www.checkargos.com
       prefix: /
-      service: check-argos
+      service: check-argos.default
 spec:
   selector:    
     app: check-argos
