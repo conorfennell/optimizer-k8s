@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/conorfennell/optimizer-k8s.git
     path: charts/argocd
-    targetRevision: e64f8c15918fb10b1506dd2d476a096b112286dd
+    targetRevision: b8ad4527afeaccb77bd93062bbab6591e9ca5714
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
