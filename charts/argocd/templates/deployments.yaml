@@ -25,7 +25,7 @@ spec:
         - "20"
         - --operation-processors
         - "10"
-        image: argoproj/argocd:latest
+        image: argoproj/argocd:{{ .Values.argocd.version }}
         imagePullPolicy: Always
         name: argocd-application-controller
         ports:
@@ -135,7 +135,7 @@ spec:
         - argocd-repo-server
         - --redis
         - argocd-redis:6379
-        image: argoproj/argocd:latest
+        image: argoproj/argocd:{{ .Values.argocd.version }}
         imagePullPolicy: Always
         name: argocd-repo-server
         ports:
@@ -169,7 +169,7 @@ spec:
         - argocd-server
         - --staticassets
         - /shared/app
-        image: argoproj/argocd:latest
+        image: argoproj/argocd:{{ .Values.argocd.version }}
         imagePullPolicy: Always
         name: argocd-server
         ports:
