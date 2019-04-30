@@ -6,9 +6,9 @@ metadata:
 spec:
   project: kube-system
   source:
-    repoURL: https://github.com/conorfennell/optimizer-k8s.git
-    path: charts/metrics-server
-    targetRevision: e64f8c15918fb10b1506dd2d476a096b112286dd
+    repoURL: https://github.com/helm/charts.git
+    path: stable/metrics-server
+    targetRevision: eab3da62ec347915c58188ba6d0aa8e4db26fe89
     helm:
       parameters:
         - name: serviceAccount.name

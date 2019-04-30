@@ -14,7 +14,7 @@ spec:
   - group: apiregistration.k8s.io
     kind: APIService
   sourceRepos:
-    - https://github.com/conorfennell/optimizer-k8s.git
+    - https://github.com/helm/charts.git
   destinations:
     - server: https://kubernetes.default.svc
       namespace: kube-system
