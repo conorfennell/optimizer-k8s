@@ -1,0 +1,13 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ambassador-routes
+spec:
+  project: ambassador-routes
+  source:
+    repoURL: https://github.com/conorfennell/optimizer-k8s.git
+    path: charts/ambassador-routes
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ambassador
