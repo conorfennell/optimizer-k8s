@@ -4,7 +4,7 @@ kind: Application
 metadata:
   name: ambassador-routes
 spec:
-  project: ambassador-routes
+  project: ambassador
   source:
     repoURL: https://github.com/conorfennell/optimizer-k8s.git
     path: charts/ambassador-routes
