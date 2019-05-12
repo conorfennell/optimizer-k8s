@@ -1,0 +1,17 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: observe
+spec:
+  clusterResourceWhitelist:
+  - group: "*"
+    kind: "*"
+  sourceRepos:
+    - https://github.com/helm/charts.git
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: observe
+    - server: https://kubernetes.default.svc
+      namespace: kube-system
+  description: "Applications that are used for observability"
