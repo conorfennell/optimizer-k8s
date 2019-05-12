@@ -11,6 +11,20 @@ metadata:
       host: grafana.paintbatch.com
       prefix: /
       service: prometheus-operator-grafana.observe
+      ---
+      apiVersion: ambassador/v1
+      kind: Mapping
+      name: prometheus
+      host: prometheus.paintbatch.com
+      prefix: /
+      service: prometheus-operator-prometheus.observe:9090
+      ---
+      apiVersion: ambassador/v1
+      kind: Mapping
+      name: alertmanager
+      host: alertmanager.paintbatch.com
+      prefix: /
+      service: prometheus-operator-alertmanager.observe:9093
 spec:
   ports:  
   - port: 80

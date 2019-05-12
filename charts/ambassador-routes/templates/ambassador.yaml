@@ -10,7 +10,8 @@ metadata:
       name: ambassador
       host: ambassador.paintbatch.com
       prefix: /
-      service: ambassador-admins.ambassador
+      rewrite: /ambassador/v0/diag/
+      service: ambassador-admins.ambassador:8877
 spec:
   ports:  
   - port: 80
