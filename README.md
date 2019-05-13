@@ -30,6 +30,4 @@ kubectl apply -n argocd -f bootstrap
 
 # TODO:
  * Add external-dns to make dns registering declarative
- * Add observability with prometheus, alert manager and Grafana
- * Add reverse proxy like ambassador or Istio to monitor North/South and East/West traffic and to reduce the number of Load Balancers.
  * Add [chaos monkey](https://github.com/helm/charts/tree/master/stable/chaoskube) to introduce controlled failure into the live cluster. This is not useful until monitoring is present.
