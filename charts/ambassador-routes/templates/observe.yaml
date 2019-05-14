@@ -25,6 +25,13 @@ metadata:
       host: alertmanager.paintbatch.com
       prefix: /
       service: prometheus-operator-alertmanager.observe:9093
+      ---
+      apiVersion: ambassador/v1
+      kind: Mapping
+      name: ops-view
+      host: ops-view.paintbatch.com
+      prefix: /
+      service: kube-ops-view-kube-ops-view.observe
 spec:
   ports:  
   - port: 80
