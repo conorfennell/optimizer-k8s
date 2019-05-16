@@ -18,4 +18,4 @@ spec:
   destinations:
     - server: https://kubernetes.default.svc
       namespace: kube-system
-  description: "Applications that are provided by kubernetes"
+  description: "Applications that support kubernete operations"
