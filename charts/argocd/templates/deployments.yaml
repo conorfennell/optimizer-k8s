@@ -76,7 +76,7 @@ spec:
         - cp
         - /usr/local/bin/argocd-util
         - /shared
-        image: argoproj/argocd:latest
+        image: argoproj/argocd:{{ .Values.argocd.version }}
         imagePullPolicy: Always
         name: copyutil
         volumeMounts:
@@ -200,7 +200,7 @@ spec:
         - -r
         - /app
         - /shared
-        image: argoproj/argocd-ui:latest
+        image: argoproj/argocd-ui:{{ .Values.argocd.version }}
         imagePullPolicy: Always
         name: ui
         volumeMounts:
