@@ -5,7 +5,7 @@ metadata:
   labels:
     app: check-argos
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
       app: check-argos
@@ -14,7 +14,6 @@ spec:
       labels:
         app: check-argos
     spec:
-      replicas: {{ .Values.replicas }}
       containers:
       - name: check-argos
         image: sevenleap/apps:check-argos
