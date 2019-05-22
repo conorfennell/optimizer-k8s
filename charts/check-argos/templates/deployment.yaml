@@ -14,6 +14,7 @@ spec:
       labels:
         app: check-argos
     spec:
+      replicas: {{ .Values.replicas }}
       containers:
       - name: check-argos
         image: sevenleap/apps:check-argos
