@@ -17,9 +17,14 @@ ArgoCD declarative pull based Gitops repository representing the state of the pa
 These steps can be automated.
 
 1. Create a cluster manually on your preferred cloud provider.
-2. Apply ArgoCD helm chart into the kubernetes cluster  
+2. Clone down ArgoCD chart
   ```
-  helm template charts/argocd | kubectl apply -n argocd -f -
+  git clone git@github.com:argoproj/argo-helm.git
+  ```
+
+2. Navigate to and Apply in ArgoCD helm chart into the kubernetes cluster  
+  ```
+  helm template --namespace argocd . | kubectl apply -n argocd -f -
   ```
 3. Apply in the parent ArgoCD application
 ```
