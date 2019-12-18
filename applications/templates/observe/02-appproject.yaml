@@ -12,6 +12,7 @@ spec:
       server: '*'
   sourceRepos:
     - https://github.com/helm/charts.git
+    - https://github.com/conorfennell/charts.git
   destinations:
     - server: https://kubernetes.default.svc
       namespace: observe
