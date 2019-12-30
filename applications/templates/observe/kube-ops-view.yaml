@@ -6,7 +6,7 @@ metadata:
 spec:
   project: observe
   source:
-    repoURL: https://github.com/helm/charts.git
+    repoURL: https://github.com/conorfennell/charts.git
     path: stable/kube-ops-view
     helm:
       parameters:

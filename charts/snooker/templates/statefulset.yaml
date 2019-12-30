@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: snooker-live
+  labels:
+    app: snooker-live
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: snooker-live
+  serviceName: "snooker-live"    
+  template:
+    metadata:
+      labels:
+        app: snooker-live
+    spec:
+      containers:
+      - name: snooker-live
+        image: sevenleap/apps:snooker-live
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "100m"
+          limits:
+            memory: "100Mi"
+      imagePullSecrets:
+      - name: regcred
