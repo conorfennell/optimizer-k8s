@@ -11,7 +11,7 @@
         - namespace: '*'
           server: '*'
       sourceRepos:
-        - https://github.com/conorfennell/charts.git
+        - https://github.com/conorfennell/optimizer-k8s.git
       destinations:
         - server: https://kubernetes.default.svc
           namespace: snooker
