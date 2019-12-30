@@ -1,0 +1,13 @@
+---
+    apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: snooker
+    spec:
+      project: snooker
+      source:
+        repoURL: https://github.com/conorfennell/optimizer-k8s.git
+        path: charts/snooker
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: snooker
