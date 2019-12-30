@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:  
-  name: observe-routes
+  name: argocd-routes
   annotations:
     getambassador.io/config: |
-      ---
       apiVersion: ambassador/v1
       kind: Mapping
-      name: ops-view
-      host: ops-view.paintbatch.com
+      name: argocd
+      host: argocd.paintbatch.com
+      use_websocket: true
       prefix: /
-      service: kube-ops-view.observe
+      service: https://release-name-argocd-server.argocd
 spec:
   ports:  
   - port: 80

@@ -3,7 +3,6 @@ ArgoCD declarative pull based Gitops repository representing the state of the pa
 
 ## optimizer-k8s contains the following ArgoCD applications
 
- - paint-batch-optimizer
  - metrics-server - needed for the horizontal pod scaler and when prometheus is added for scraping
  - argocd
  - parent application - once bootstrapped this is used to add new applications and sync changes to other application definitions without needing to apply them in
@@ -17,13 +16,12 @@ ArgoCD declarative pull based Gitops repository representing the state of the pa
 These steps can be automated.
 
 1. Create a cluster manually on your preferred cloud provider.
-2. Clone down ArgoCD chart
+2. Fetch and apply in argo cd
   ```
-  git clone git@github.com:argoproj/argo-helm.git
-  ```
-
-2. Navigate to and Apply in ArgoCD helm chart into the kubernetes cluster  
-  ```
+  helm repo add argo https://argoproj.github.io/argo-helm
+  helm fetch argo/argo-cd --untar
+  cd ./argo-cd
+  kubectl create namespace argocd
   helm template --namespace argocd . | kubectl apply -n argocd -f -
   ```
 3. Apply in the parent ArgoCD application
@@ -32,6 +30,12 @@ kubectl apply -n argocd -f bootstrap
 ```
 
 4. Sync ArgoCD applications
+
+5. For check-argos and snooker
+
+`kubectl create secret docker-registry regcred --docker-server=https://index.docker.io/v1/ --docker-username=$DOCKER_USERNAME --docker-password=$DOCKER_PASSWORD --docker-email=$DOCKER_EMAIL -n check-argos`
+
+`kubectl create secret docker-registry regcred --docker-server=https://index.docker.io/v1/ --docker-username=$DOCKER_USERNAME --docker-password=$DOCKER_PASSWORD --docker-email=$DOCKER_EMAIL -n snooker`
 
 # TODO:
  * Add external-dns to make dns registering declarative
