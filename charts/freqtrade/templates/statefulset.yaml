@@ -19,7 +19,7 @@ spec:
       - name: freq-trade
         image: freqtradeorg/freqtrade:latest
         command: ["freqtrade"]
-        args: ["trade","--db-url", "sqlite:///db/tradesv3.sqlite", "--config", "/freqtrade/config/config.json", "--strategy-path","/freqtrade/config", "--strategy", "Strategy005"] 
+        args: ["trade","--db-url", "sqlite:///db/tradesv3.sqlite", "--config", "/freqtrade/config/config.json", "--strategy-path","/freqtrade/config", "--strategy", "Strategy006"] 
         imagePullPolicy: Always
         resources:
 {{ .Values.resources | toYaml | indent 10}}
