@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: freq-trade
+  labels:
+    app: freq-trade
+spec:
+  serviceName: freq-trade
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: freq-trade
+  template:
+    metadata:
+      labels:
+        app: freq-trade
+    spec:
+      containers:
+      - name: freq-trade
+        image: freqtradeorg/freqtrade:latest
+        command: ["freqtrade"]
+        args: ["trade","--db-url", "sqlite:///db/tradesv3.sqlite", "--config", "/freqtrade/config/config.json", "--strategy-path","/freqtrade/config", "--strategy", "Strategy005"] 
+        imagePullPolicy: Always
+        resources:
+{{ .Values.resources | toYaml | indent 10}}
+        volumeMounts:
+        - name: db
+          mountPath: /freqtrade/db
+          subPath: freqtrade/db
+        - name: config
+          mountPath: /freqtrade/config
+      volumes:
+        - name: config
+          configMap: 
+            name: freq-trade
+  volumeClaimTemplates:
+  - metadata:
+      name: db
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "do-block-storage"
+      resources:
+        requests:
+          storage: 1Gi
