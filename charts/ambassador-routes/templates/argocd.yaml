@@ -10,7 +10,7 @@ metadata:
       host: argocd.paintbatch.com
       use_websocket: true
       prefix: /
-      service: https://release-name-argocd-server.argocd
+      service: http://release-name-argocd-server.argocd
 spec:
   ports:  
   - port: 80
