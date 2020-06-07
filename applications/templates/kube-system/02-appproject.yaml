@@ -13,10 +13,15 @@ spec:
       kind: CustomResourceDefinition
     - group: apiregistration.k8s.io
       kind: APIService
+    - group: admissionregistration.k8s.io
+      kind: ValidatingWebhookConfiguration
+    - group: admissionregistration.k8s.io
+      kind: MutatingWebhookConfiguration 
   destinations:
     - namespace: '*'
       server: '*'
   sourceRepos:
+    - https://charts.jetstack.io
     - https://github.com/helm/charts.git
   destinations:
     - server: https://kubernetes.default.svc
