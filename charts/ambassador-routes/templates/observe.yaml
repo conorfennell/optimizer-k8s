@@ -8,7 +8,7 @@ metadata:
       apiVersion: ambassador/v1
       kind: Mapping
       name: ops-view
-      host: ops-view.paintbatch.com
+      host: ops-view.idiomcentric.com
       prefix: /
       service: kube-ops-view.observe
       ---
