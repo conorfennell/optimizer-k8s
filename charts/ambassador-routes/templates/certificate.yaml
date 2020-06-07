@@ -1,0 +1,33 @@
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: idiomcentric
+spec:
+  hostname: idiomcentric.com
+  acmeProvider:
+    email: fennell.conor@gmail.com
+  tlsSecret:
+    name: idiomcentric-certs
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: argocd.idiomcentric
+spec:
+  hostname: argocd.idiomcentric.com
+  acmeProvider:
+    email: fennell.conor@gmail.com
+  tlsSecret:
+    name: argocd-certs
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: ops-view.idiomcentric
+spec:
+  hostname: ops-view.idiomcentric.com
+  acmeProvider:
+    email: fennell.conor@gmail.com
+  tlsSecret:
+    name: ops-view-certs
