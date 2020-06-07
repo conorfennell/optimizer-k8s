@@ -11,8 +11,8 @@ spec:
     targetRevision: v0.15.1
     helm:
       parameters:
-        - name: cainjector.enabled
-          value: "false"
+        - name: installCRDs
+          value: "true"
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
