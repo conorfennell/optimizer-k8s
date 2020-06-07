@@ -11,6 +11,7 @@ metadata:
       host: ops-view.paintbatch.com
       prefix: /
       service: kube-ops-view.observe
+      ---
 spec:
   ports:  
   - port: 80

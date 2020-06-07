@@ -15,8 +15,8 @@ spec:
     - namespace: '*'
       server: '*'
   sourceRepos:
-    - https://github.com/helm/charts.git
     - https://github.com/conorfennell/optimizer-k8s.git
+    - https://getambassador.io
   destinations:
     - server: https://kubernetes.default.svc
       namespace: ambassador

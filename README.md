@@ -22,7 +22,7 @@ These steps can be automated.
   helm fetch argo/argo-cd --untar
   cd ./argo-cd
   kubectl create namespace argocd
-  helm template --namespace argocd . | kubectl apply -n argocd -f -
+  helm --namespace argocd --set server.extraArgs={--insecure} template . | kubectl apply -n argocd -f -
   ```
 3. Apply in the parent ArgoCD application
 ```

@@ -6,12 +6,13 @@ metadata:
 spec:
   project: ambassador
   source:
-    repoURL: https://github.com/helm/charts.git
-    path: stable/ambassador
+    repoURL: https://getambassador.io
+    chart: ambassador
+    targetRevision: 6.4.2
     helm:
       parameters:
         - name: replicaCount
-          value: "1"
+          value: '1'
   destination:
     server: https://kubernetes.default.svc
     namespace: ambassador
