@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: soccer-goals-bot
+  labels:
+    app: soccer-goals-bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: soccer-goals-bot
+  serviceName: "soccer-goals-bot"    
+  template:
+    metadata:
+      labels:
+        app: soccer-goals-bot
+    spec:
+      containers:
+      - name: soccer-goals-bot
+        image: sevenleap/apps:soccer-goals-bot
+        env:
+          - name: BPL_CHANNEL_NAME
+            value: {{ .Values.BPL_CHANNEL_NAME }}
+          - name: FIRE_BASE_ROOT
+            value: {{ .Values.FIRE_BASE_ROOT }}
+          - name: FIRE_BASE_APP
+            valueFrom:
+              configMapKeyRef:
+                name: soccer-goals-bot
+                key: FIRE_BASE_APP
+          - name: BOT_TOKEN
+            valueFrom:
+              configMapKeyRef:
+                name: soccer-goals-bot
+                key: BOT_TOKEN
+          - name: GA_TRACKING_ID
+            valueFrom:
+              configMapKeyRef:
+                name: soccer-goals-bot
+                key: GA_TRACKING_ID
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "100m"
+          limits:
+            memory: "100Mi"
+      imagePullSecrets:
+      - name: regcred

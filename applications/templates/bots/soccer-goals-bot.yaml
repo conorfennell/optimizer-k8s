@@ -1,0 +1,13 @@
+---
+    apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: soccer-goals-bot
+    spec:
+      project: bots
+      source:
+        repoURL: https://github.com/conorfennell/optimizer-k8s.git
+        path: charts/soccer-goals-bot
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: bots
