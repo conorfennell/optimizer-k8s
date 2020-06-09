@@ -21,6 +21,10 @@ spec:
         env:
           - name: BPL_CHANNEL_NAME
             value: {{ .Values.BPL_CHANNEL_NAME }}
+          - name: BUND_CHANNEL_NAME
+            value: {{ .Values.BUND_CHANNEL_NAME}}  
+          - name: WC_CHANNEL_NAME
+            value: {{ .Values.WC_CHANNEL_NAME}}  
           - name: FIRE_BASE_ROOT
             value: {{ .Values.FIRE_BASE_ROOT }}
           - name: FIRE_BASE_APP

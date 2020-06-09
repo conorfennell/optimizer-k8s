@@ -31,11 +31,23 @@ kubectl apply -n argocd -f bootstrap
 
 4. Sync ArgoCD applications
 
-5. For check-argos and snooker
+5. For bots and snooker
 
-`kubectl create secret docker-registry regcred --docker-server=https://index.docker.io/v1/ --docker-username=$DOCKER_USERNAME --docker-password=$DOCKER_PASSWORD --docker-email=$DOCKER_EMAIL -n check-argos`
+`kubectl create secret docker-registry regcred --docker-server=https://index.docker.io/v1/ --docker-username=$DOCKER_USERNAME --docker-password=$DOCKER_PASSWORD --docker-email=$DOCKER_EMAIL -n bots`
 
 `kubectl create secret docker-registry regcred --docker-server=https://index.docker.io/v1/ --docker-username=$DOCKER_USERNAME --docker-password=$DOCKER_PASSWORD --docker-email=$DOCKER_EMAIL -n snooker`
+
+6. For soccer goals bot
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: soccer-goals-bot
+data:
+  BOT_TOKEN:
+  GA_TRACKING_ID:
+  FIRE_BASE_APP:
+````
 
 # TODO:
  * Add external-dns to make dns registering declarative
