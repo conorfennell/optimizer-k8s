@@ -19,29 +19,36 @@ spec:
       - name: soccer-goals-bot
         image: sevenleap/apps:soccer-goals-bot
         env:
-          - name: BPL_CHANNEL_NAME
-            value: {{ .Values.BPL_CHANNEL_NAME }}
-          - name: BUND_CHANNEL_NAME
-            value: {{ .Values.BUND_CHANNEL_NAME}}  
-          - name: WC_CHANNEL_NAME
-            value: {{ .Values.WC_CHANNEL_NAME}}  
-          - name: FIRE_BASE_ROOT
-            value: {{ .Values.FIRE_BASE_ROOT }}
-          - name: FIRE_BASE_APP
+          - name: BPL_CHAT_ID
             valueFrom:
               configMapKeyRef:
                 name: soccer-goals-bot
-                key: FIRE_BASE_APP
+                key: BPL_CHAT_ID
+          - name: BUND_CHAT_ID
+            valueFrom:
+                configMapKeyRef:
+                  name: soccer-goals-bot
+                  key: BUND_CHAT_ID
+          - name: WC_CHAT_ID
+            valueFrom:
+              configMapKeyRef:
+                name: soccer-goals-bot
+                key: WC_CHAT_ID
+          - name: FIRE_BASE_ROOT
+            valueFrom:
+              configMapKeyRef:
+                name: soccer-goals-bot
+                key: FIRE_BASE_ROOT
+          - name: FIRE_BASE_JSON
+            valueFrom:
+              configMapKeyRef:
+                name: soccer-goals-bot
+                key: FIRE_BASE_JSON
           - name: BOT_TOKEN
             valueFrom:
               configMapKeyRef:
                 name: soccer-goals-bot
                 key: BOT_TOKEN
-          - name: GA_TRACKING_ID
-            valueFrom:
-              configMapKeyRef:
-                name: soccer-goals-bot
-                key: GA_TRACKING_ID
         imagePullPolicy: Always
         resources:
           requests:
