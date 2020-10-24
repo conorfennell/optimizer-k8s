@@ -39,11 +39,11 @@ spec:
               configMapKeyRef:
                 name: soccer-goals-bot
                 key: FIRE_BASE_ROOT
-          - name: FIRE_BASE_JSON
+          - name: FIREBASE_JSON
             valueFrom:
               configMapKeyRef:
                 name: soccer-goals-bot
-                key: FIRE_BASE_JSON
+                key: FIREBASE_JSON
           - name: BOT_TOKEN
             valueFrom:
               configMapKeyRef:
