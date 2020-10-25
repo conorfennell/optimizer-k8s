@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pobail
+  labels:
+    app: pobail
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: pobail
+  template:
+    metadata:
+      labels:
+        app: pobail
+    spec:
+      containers:
+      - name: pobail
+        image: sevenleap/apps:pobail
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+        resources:
+{{ .Values.resources | toYaml | indent 10}}
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: 5000
+          initialDelaySeconds: 10
+          periodSeconds: 10
+      imagePullSecrets:
+      - name: regcred

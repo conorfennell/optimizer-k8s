@@ -2,12 +2,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: soccer-goals-bot
+  name: pobail
 spec:
-  project: bots
+  project: pobail
   source:
     repoURL: https://github.com/conorfennell/optimizer-k8s.git
-    path: charts/soccer-goals-bot
+    path: charts/pobail
   destination:
     server: https://kubernetes.default.svc
-    namespace: bots
+    namespace: pobail

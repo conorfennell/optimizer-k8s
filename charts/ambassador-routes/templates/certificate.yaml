@@ -31,3 +31,14 @@ spec:
     email: fennell.conor@gmail.com
   tlsSecret:
     name: ops-view-certs
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: pobail.idiomcentric
+spec:
+  hostname: pobail.idiomcentric.com
+  acmeProvider:
+    email: fennell.conor@gmail.com
+  tlsSecret:
+    name: pobail-certs
