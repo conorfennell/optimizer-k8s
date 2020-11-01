@@ -2,15 +2,40 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
+  name: argocd-rbac-cm
+  namespace: argocd
   labels:
-    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/name: argocd-rbac-cm
     app.kubernetes.io/part-of: argocd
-  name: argocd-cm
+data:
+  policy.csv: |
+    g, edgelevel:level, role:admin
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
+  name: argocd-cm
+  namespace: argocd
   labels:
-    app.kubernetes.io/name: argocd-rbac-cm
+    app.kubernetes.io/name: argocd-cm
     app.kubernetes.io/part-of: argocd
-  name: argocd-rbac-cm
+data:
+  admin.enabled: "false"
+  application.instanceLabelKey: argocd.argoproj.io/instance
+  url: https://argocd.idiomcentric.com
+  redirectURL: https://argocd.idiomcentric.com/api/dex/callback
+  policy.csv: |
+    g, edgelevel:level, role:admin
+  dex.config: |
+    connectors:
+      # GitHub
+      - type: github
+        id: github
+        name: github
+        config:
+          clientID: <fill>
+          clientSecret: <fill>
+          orgs:
+          - name: edgelevel
+            teams:
+            - level

@@ -37,6 +37,9 @@ kubectl apply -n argocd -f bootstrap
 
 `kubectl create secret docker-registry regcred --docker-server=https://index.docker.io/v1/ --docker-username=$DOCKER_USERNAME --docker-password=$DOCKER_PASSWORD --docker-email=$DOCKER_EMAIL -n snooker`
 
+`kubectl create secret docker-registry regcred --docker-server=https://index.docker.io/v1/ --docker-username=$DOCKER_USERNAME --docker-password=$DOCKER_PASSWORD --docker-email=$DOCKER_EMAIL -n pobail`
+
+
 6. For soccer goals bot
 ```
 apiVersion: v1
@@ -45,8 +48,11 @@ metadata:
   name: soccer-goals-bot
 data:
   BOT_TOKEN:
-  GA_TRACKING_ID:
-  FIRE_BASE_APP:
+  FIREBASE_JSON:
+  FIRE_BASE_ROOT:
+  BPL_CHAT_ID:
+  BUND_CHAT_ID:
+  WC_CHAT_ID:
 ````
 
 # TODO:
