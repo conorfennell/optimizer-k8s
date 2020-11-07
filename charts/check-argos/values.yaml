@@ -1,8 +1,8 @@
 resources:
   requests:
     memory: "200Mi"
-    cpu: 10m
+    cpu: 100m
   limits:
     memory: "200Mi"
 
-replicas: 2
+replicas: 1
