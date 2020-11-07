@@ -1,0 +1,15 @@
+# Jetbrains stuff
+.idea
+.idea/*
+.idea/**
+.idea/
+*.iml
+modules.xml
+*.ipr
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

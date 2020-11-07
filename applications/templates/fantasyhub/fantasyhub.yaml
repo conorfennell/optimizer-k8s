@@ -1,0 +1,13 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fantasyhub
+spec:
+  project: fantasyhub
+  source:
+    repoURL: https://github.com/sevenleaps/fantasyhub.git
+    path: charts/fantasyhub
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: fantasyhub

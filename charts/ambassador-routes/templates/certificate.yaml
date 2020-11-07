@@ -53,3 +53,14 @@ spec:
       email: fennell.conor@gmail.com
     tlsSecret:
       name: check-argos-certs
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: fantasyhub.idiomcentric
+spec:
+  hostname: fantasyhub.idiomcentric.com
+  acmeProvider:
+    email: fennell.conor@gmail.com
+  tlsSecret:
+    name: fantasyhub-certs
