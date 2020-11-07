@@ -1,0 +1,14 @@
+---
+    apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: check-argos
+    spec:
+      project: bots
+      source:
+        repoURL: https://github.com/conorfennell/optimizer-k8s.git
+        path: charts/check-argos
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: bots
+    
