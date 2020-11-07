@@ -6,7 +6,7 @@ metadata:
 spec:
   project: fantasyhub
   source:
-    repoURL: https://github.com/sevenleaps/fantasyhub.git
+    repoURL: https://github.com/conorfennell/optimizer-k8s.git
     path: charts/fantasyhub
   destination:
     server: https://kubernetes.default.svc

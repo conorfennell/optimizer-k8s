@@ -59,7 +59,7 @@ kind: Host
 metadata:
   name: fantasyhub.idiomcentric
 spec:
-  hostname: fantasyhub.idiomcentric.com
+  hostname: fantasyhub.net
   acmeProvider:
     email: fennell.conor@gmail.com
   tlsSecret:
