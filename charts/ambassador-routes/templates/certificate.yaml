@@ -75,7 +75,6 @@ spec:
     email: fennell.conor@gmail.com
   tlsSecret:
     name: darragh-certs
-    name: fantasyhub-certs
 ---
 apiVersion: getambassador.io/v2
 kind: Host
