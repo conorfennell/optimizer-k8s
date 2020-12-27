@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: darragh
+  labels:
+    app: darragh
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: darragh
+  template:
+    metadata:
+      labels:
+        app: darragh
+    spec:
+      containers:
+      - name: darragh
+        image: sevenleap/apps:darragh
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        resources:
+{{ .Values.resources | toYaml | indent 10}}
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 10
+      imagePullSecrets:
+      - name: regcred

@@ -1,0 +1,14 @@
+---
+    apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: darragh
+    spec:
+      project: pobail
+      source:
+        repoURL: https://github.com/conorfennell/optimizer-k8s.git
+        path: charts/darragh
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: pobail
+    
