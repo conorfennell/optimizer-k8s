@@ -64,3 +64,26 @@ spec:
     email: fennell.conor@gmail.com
   tlsSecret:
     name: fantasyhub-certs
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: darragh.idiomcentric
+spec:
+  hostname: fantasyhub.net
+  acmeProvider:
+    email: fennell.conor@gmail.com
+  tlsSecret:
+    name: darragh-certs
+    name: fantasyhub-certs
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: saoirse.idiomcentric
+spec:
+  hostname: fantasyhub.net
+  acmeProvider:
+    email: fennell.conor@gmail.com
+  tlsSecret:
+    name: saoirse-certs
