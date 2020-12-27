@@ -70,7 +70,7 @@ kind: Host
 metadata:
   name: darragh.idiomcentric
 spec:
-  hostname: fantasyhub.net
+  hostname: darragh.idiomcentric.com
   acmeProvider:
     email: fennell.conor@gmail.com
   tlsSecret:
@@ -81,7 +81,7 @@ kind: Host
 metadata:
   name: saoirse.idiomcentric
 spec:
-  hostname: fantasyhub.net
+  hostname: saoirse.idiomcentric.com
   acmeProvider:
     email: fennell.conor@gmail.com
   tlsSecret:
