@@ -86,3 +86,14 @@ spec:
     email: fennell.conor@gmail.com
   tlsSecret:
     name: saoirse-certs
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: acornoaktree
+spec:
+  hostname: acornoaktree.com
+  acmeProvider:
+    email: fennell.conor@gmail.com
+  tlsSecret:
+    name: acornoaktree-certs
