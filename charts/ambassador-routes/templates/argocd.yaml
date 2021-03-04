@@ -10,7 +10,7 @@ metadata:
       host: argocd.idiomcentric.com
       use_websocket: true
       prefix: /
-      service: http://release-name-argocd-server.argocd
+      service: http://release-argocd-server.argocd
 spec:
   ports:  
   - port: 80
