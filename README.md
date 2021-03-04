@@ -23,7 +23,7 @@ These steps can be automated.
   cd ./argo-cd
   kubectl create namespace argocd
   kubectl apply -f ./crds/
-  helm --namespace argocd --set server.extraArgs={--insecure} template --release-name release. | kubectl apply -n argocd -f -
+  helm --namespace argocd --set server.extraArgs={--insecure} template --release-name release . | kubectl apply -n argocd -f -
   ```
 3. Apply in the parent ArgoCD application
 ```
