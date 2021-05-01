@@ -1,0 +1,13 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ambassador-auth
+spec:
+  project: ambassador
+  source:
+    repoURL: https://github.com/conorfennell/optimizer-k8s.git
+    path: charts/ambassador-auth
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ambassador
