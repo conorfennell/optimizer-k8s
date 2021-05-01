@@ -1,0 +1,13 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: postgres
+spec:
+  project: hierarchy
+  source:
+    repoURL: https://github.com/conorfennell/optimizer-k8s.git
+    path: charts/postgres
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: hierarchy

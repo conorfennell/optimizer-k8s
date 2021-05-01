@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres
+  labels:
+    app: postgres
+spec:
+  serviceName: postgres
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:10.5
+        ports:
+          - containerPort: 5432
+        resources:
+{{ .Values.resources | toYaml | indent 10}}
+        volumeMounts:
+        - name: db
+          mountPath: /var/lib/postgresql/data
+          subPath: postgres
+        env:          
+{{ .Values.env | toYaml | indent 10}}
+  volumeClaimTemplates:
+  - metadata:
+      name: db
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "do-block-storage"
+      resources:
+        requests:
+          storage: 1Gi

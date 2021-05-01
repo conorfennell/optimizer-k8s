@@ -1,0 +1,13 @@
+resources:
+  requests:
+    memory: 500Mi
+  limits:
+    memory: 500Mi
+  
+replicas: 1
+
+env:
+  - name: POSTGRES_USER
+    value: username
+  - name: POSTGRES_PASSWORD
+    value: password

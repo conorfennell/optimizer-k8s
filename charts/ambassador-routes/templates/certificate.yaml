@@ -43,6 +43,17 @@ spec:
   tlsSecret:
     name: pobail-certs
 ---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: hierarchy.idiomcentric
+spec:
+  hostname: hierarchy.idiomcentric.com
+  acmeProvider:
+    email: fennell.conor@gmail.com
+  tlsSecret:
+    name: hierarchy-certs
+---
   apiVersion: getambassador.io/v2
   kind: Host
   metadata:
