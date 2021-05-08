@@ -6,12 +6,13 @@ metadata:
 spec:
   project: observe
   source:
-    repoURL: https://github.com/conorfennell/charts.git
-    path: stable/kube-ops-view
+    repoURL: https://kubernetes-charts.storage.googleapis.com
+    chart: stable/kube-ops-view
+    targetRevision: 1.2.1
     helm:
       parameters:
         - name: rbac.create
-          value: "true" 
+          value: "true"
   destination:
     server: https://kubernetes.default.svc
     namespace: observe

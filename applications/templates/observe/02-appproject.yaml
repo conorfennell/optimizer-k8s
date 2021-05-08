@@ -11,8 +11,7 @@ spec:
     - namespace: '*'
       server: '*'
   sourceRepos:
-    - https://github.com/helm/charts.git
-    - https://github.com/conorfennell/charts.git
+    - https://kubernetes-charts.storage.googleapis.com
   destinations:
     - server: https://kubernetes.default.svc
       namespace: observe
