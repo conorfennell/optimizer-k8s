@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://getambassador.io
     chart: ambassador
-    targetRevision: 6.4.2
+    targetRevision: 6.6.0
     helm:
       parameters:
         - name: replicaCount
