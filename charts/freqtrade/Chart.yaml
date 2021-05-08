@@ -1,3 +1,5 @@
 apiVersion: v1
-description: Helm chart for deploying freqtrade
 name: freqtrade
+appVersion: "1.0"
+description: Helm chart for deploying freqtrade
+version: 1.0.0
