@@ -1,18 +1,18 @@
 ---
-    apiVersion: argoproj.io/v1alpha1
-    kind: AppProject
-    metadata:
-      name: pobail
-    spec:
-      clusterResourceWhitelist:
-        - group: "*"
-          kind: "*"
-      destinations:
-        - namespace: '*'
-          server: '*'
-      sourceRepos:
-        - https://github.com/conorfennell/optimizer-k8s.git
-      destinations:
-        - server: https://kubernetes.default.svc
-          namespace: pobail
-      description: "Applications that are used for fast development"
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: pobail
+spec:
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  destinations:
+    - namespace: '*'
+      server: '*'
+  sourceRepos:
+    - https://github.com/conorfennell/optimizer-k8s.git
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: pobail
+  description: "Applications that are used for fast development"
