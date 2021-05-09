@@ -1,17 +1,9 @@
-apiVersion: v1
-kind: Service
-metadata:  
-  name: fantasyhub-routes
-  annotations:
-    getambassador.io/config: |
-      ---
-      apiVersion: ambassador/v1
-      kind: Mapping
-      name: fantasyhub
-      host: fantasyhub.net
-      prefix: /
-      service: fantasyhub.fantasyhub
-      ---
+---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: fantasyhub
 spec:
-  ports:  
-  - port: 80
+  host: fantasyhub.net
+  prefix: /
+  service: fantasyhub.fantasyhub

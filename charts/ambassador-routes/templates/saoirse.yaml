@@ -1,17 +1,9 @@
-apiVersion: v1
-kind: Service
-metadata:  
-  name: saoirse-routes
-  annotations:
-    getambassador.io/config: |
-      ---
-      apiVersion: ambassador/v1
-      kind: Mapping
-      name: saoirse
-      host: saoirse.idiomcentric.com
-      prefix: /
-      service: saoirse.pobail
-      ---
+---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: saoirse
 spec:
-  ports:  
-  - port: 80
+  host: saoirse.idiomcentric.com
+  prefix: /
+  service: saoirse.pobail

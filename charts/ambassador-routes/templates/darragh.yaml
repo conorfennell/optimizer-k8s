@@ -1,17 +1,9 @@
-apiVersion: v1
-kind: Service
-metadata:  
-  name: darragh-routes
-  annotations:
-    getambassador.io/config: |
-      ---
-      apiVersion: ambassador/v1
-      kind: Mapping
-      name: darragh
-      host: darragh.idiomcentric.com
-      prefix: /
-      service: darragh.pobail
-      ---
+---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: darragh
 spec:
-  ports:  
-  - port: 80
+  host: darragh.idiomcentric.com
+  prefix: /
+  service: darragh.pobail
