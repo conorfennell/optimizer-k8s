@@ -32,7 +32,11 @@ kubectl apply -n argocd -f bootstrap
 
 4. Sync ArgoCD applications
 
-5. For bots and snooker
+5. For ambassador
+`git clone git@github.com:datawire/ambassador-chart.git`
+`kubectl apply -f ./crds`
+
+6. For bots and snooker
 
 `kubectl create secret docker-registry regcred --docker-server=https://index.docker.io/v1/ --docker-username=$DOCKER_USERNAME --docker-password=$DOCKER_PASSWORD --docker-email=$DOCKER_EMAIL -n bots`
 
@@ -41,7 +45,7 @@ kubectl apply -n argocd -f bootstrap
 `kubectl create secret docker-registry regcred --docker-server=https://index.docker.io/v1/ --docker-username=$DOCKER_USERNAME --docker-password=$DOCKER_PASSWORD --docker-email=$DOCKER_EMAIL -n pobail`
 
 
-6. For soccer goals bot
+7. For soccer goals bot
 ```
 apiVersion: v1
 kind: ConfigMap

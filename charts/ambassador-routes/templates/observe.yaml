@@ -4,6 +4,6 @@ kind: Mapping
 metadata:
   name: ops-view
 spec:
-host: ops-view.idiomcentric.com
-prefix: /
-service: kube-ops-view.observe
+  host: ops-view.idiomcentric.com
+  prefix: /
+  service: kube-ops-view.observe

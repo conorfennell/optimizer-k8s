@@ -4,7 +4,7 @@ kind: Mapping
 metadata:
   name: argocd
 spec:
-      host: argocd.idiomcentric.com
-      use_websocket: true
-      prefix: /
-      service: http://release-name-argocd-server.argocd
+  host: argocd.idiomcentric.com
+  use_websocket: true
+  prefix: /
+  service: http://release-argocd-server.argocd

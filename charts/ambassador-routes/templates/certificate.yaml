@@ -43,16 +43,16 @@ spec:
   tlsSecret:
     name: pobail-certs
 ---
-  apiVersion: getambassador.io/v2
-  kind: Host
-  metadata:
-    name: checkargos
-  spec:
-    hostname: checkargos.com
-    acmeProvider:
-      email: fennell.conor@gmail.com
-    tlsSecret:
-      name: check-argos-certs
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: checkargos
+spec:
+  hostname: checkargos.com
+  acmeProvider:
+    email: fennell.conor@gmail.com
+  tlsSecret:
+    name: check-argos-certs
 ---
 apiVersion: getambassador.io/v2
 kind: Host
