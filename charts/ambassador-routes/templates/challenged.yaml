@@ -1,0 +1,9 @@
+---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: challenged
+spec:
+  host: challenged.idiomcentric.com
+  prefix: /
+  service: challenged.pobail
