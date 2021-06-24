@@ -97,3 +97,14 @@ spec:
     email: fennell.conor@gmail.com
   tlsSecret:
     name: acornoaktree-certs
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: challenged.idiomcentric
+spec:
+  hostname: challenged.idiomcentric.com
+  acmeProvider:
+    email: fennell.conor@gmail.com
+  tlsSecret:
+    name: challenged-certs
