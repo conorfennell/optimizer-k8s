@@ -1,0 +1,9 @@
+---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: conor
+spec:
+  host: idiomcentric.com
+  prefix: /
+  service: conor.pobail

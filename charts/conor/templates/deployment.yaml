@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: conor
+  labels:
+    app: conor
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: conor
+  template:
+    metadata:
+      labels:
+        app: conor
+    spec:
+      containers:
+      - name: conor
+        image: sevenleap/apps:conor
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        resources:
+{{ .Values.resources | toYaml | indent 10}}
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 10
+      imagePullSecrets:
+      - name: regcred
