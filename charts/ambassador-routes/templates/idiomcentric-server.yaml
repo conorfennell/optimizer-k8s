@@ -2,7 +2,7 @@
 apiVersion: getambassador.io/v2
 kind: Mapping
 metadata:
-  name: conor
+  name: idiomcentric-service
 spec:
   host: server.idiomcentric.com
   prefix: /
