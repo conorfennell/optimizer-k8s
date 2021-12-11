@@ -31,6 +31,12 @@ kubectl apply -n argocd -f bootstrap
 ```
 
 4. Sync ArgoCD applications
+```
+kubectl port-forward release-argocd-server-547494ddd6-77w4x 8888:8080 -n argocd
+
+username:admin
+password:kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+```
 
 5. For ambassador
 `git clone git@github.com:datawire/ambassador-chart.git`
