@@ -46,6 +46,17 @@ spec:
 apiVersion: getambassador.io/v2
 kind: Host
 metadata:
+  name: server.idiomcentric
+spec:
+  hostname: server.idiomcentric.com
+  acmeProvider:
+    email: fennell.conor@gmail.com
+  tlsSecret:
+    name: server-certs
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
   name: checkargos
 spec:
   hostname: checkargos.com
