@@ -7,3 +7,4 @@ spec:
   host: server.idiomcentric.com
   prefix: /
   service: idiomcentric-service.pobail
+  timeout_ms: 0
