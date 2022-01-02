@@ -24,14 +24,14 @@ spec:
 {{ .Values.resources | toYaml | indent 10}}
         readinessProbe:
           httpGet:
-            path: /health
+            path: /v1/health
             port: 8080
           initialDelaySeconds: 5
           periodSeconds: 5
         livenessProbe:
           failureThreshold: 3
           httpGet:
-            path: /health
+            path: /v1/health
             port: 8080
           initialDelaySeconds: 10
           periodSeconds: 10
