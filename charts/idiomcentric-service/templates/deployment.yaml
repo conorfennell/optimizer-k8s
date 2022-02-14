@@ -35,5 +35,31 @@ spec:
             port: 8080
           initialDelaySeconds: 10
           periodSeconds: 10
+        env:
+          - name: DATASOURCES_DEFAULT_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: idiomcentric-service
+                key: DATASOURCES_DEFAULT_PORT
+          - name: DATASOURCES_DEFAULT_HOSTNAME
+            valueFrom:
+                configMapKeyRef:
+                  name: idiomcentric-service
+                  key: DATASOURCES_DEFAULT_HOSTNAME
+          - name: DATASOURCES_DEFAULT_DATABASE
+            valueFrom:
+              configMapKeyRef:
+                name: idiomcentric-service
+                key: DATASOURCES_DEFAULT_DATABASE
+          - name: DATASOURCES_DEFAULT_USERNAME
+            valueFrom:
+              configMapKeyRef:
+                name: idiomcentric-service
+                key: DATASOURCES_DEFAULT_USERNAME
+          - name: DATASOURCES_DEFAULT_PASSWORD
+            valueFrom:
+              configMapKeyRef:
+                name: idiomcentric-service
+                key: DATASOURCES_DEFAULT_PASSWORD
       imagePullSecrets:
       - name: regcred
