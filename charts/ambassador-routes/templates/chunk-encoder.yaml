@@ -2,8 +2,8 @@
 apiVersion: getambassador.io/v2
 kind: Mapping
 metadata:
-  name: chunkencoder
+  name: chunk-encoder
 spec:
   host: chunkencoder.idiomcentric.com
   prefix: /
-  service: chunkencoder.pobail
+  service: chunk-encoder.pobail
