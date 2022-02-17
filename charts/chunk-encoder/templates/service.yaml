@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:  
+  name: chunk-encoder
+spec:
+  selector:    
+    app: chunk-encoder
+  type: ClusterIP
+  ports:  
+  - name: http
+    port: 80
+    targetPort: 80
+    protocol: TCP

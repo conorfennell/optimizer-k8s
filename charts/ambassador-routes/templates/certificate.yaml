@@ -119,3 +119,14 @@ spec:
     email: fennell.conor@gmail.com
   tlsSecret:
     name: challenged-certs
+---
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: chunkencoder.idiomcentric
+spec:
+  hostname: chunkencoder.idiomcentric.com
+  acmeProvider:
+    email: fennell.conor@gmail.com
+  tlsSecret:
+    name: chunkencoder-certs
